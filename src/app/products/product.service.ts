@@ -2,29 +2,29 @@ import { Injectable } from '@angular/core';
 
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 
-import { Note } from './note-model';
+import { Product } from './product-model';
 
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 
-interface NewNote {
+interface NewProduct {
   content: string;
   hearts: 0;
   time: number;
 }
 
 @Injectable()
-export class NoteService {
+export class ProductService {
 
-  notesCollection: AngularFirestoreCollection<Note>;
+  productsCollection: AngularFirestoreCollection<Product>;
   noteDocument:   AngularFirestoreDocument<Node>;
 
   constructor(private afs: AngularFirestore) {
-    this.notesCollection = this.afs.collection('notes', (ref) => ref.orderBy('time', 'desc').limit(5));
+    this.productsCollection = this.afs.collection('notes', (ref) => ref.orderBy('time', 'desc').limit(5));
   }
 
-  getData(): Observable<Note[]> {
-    return this.notesCollection.valueChanges();
+  getData(): Observable<Product[]> {
+    return this.productsCollection.valueChanges();
   }
 
   getSnapshot(): Observable<Note[]> {
