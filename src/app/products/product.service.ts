@@ -7,11 +7,11 @@ import { Product } from './product-model';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 
-interface NewProduct{
-  title: string;
-  description: string;
-  price: string;
-}
+//interface NewProduct{
+//  title: string;
+  //description: string;
+ // price: string;
+//}
 
 @Injectable()
 
