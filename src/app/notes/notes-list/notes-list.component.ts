@@ -15,6 +15,7 @@ export class NotesListComponent implements OnInit {
 
   notes: Observable<Note[]>;
   content: string;
+  title: string;
 
   constructor(private noteService: NoteService) { }
 
@@ -24,7 +25,7 @@ export class NotesListComponent implements OnInit {
   }
 
   createNote() {
-    this.noteService.create(this.content);
+    this.noteService.create(this.content,this.title);
     this.content = '';
   }
 
