@@ -13,19 +13,16 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ProductsListComponent implements OnInit {
 
-  notes: Observable<Product[]>;
-  content: string;
+ // notes: Observable<Product[]>;
+ // content: string;
 
-  constructor(private productService: ProductService) { }
+  
 
   ngOnInit() {
     // this.notes = this.noteService.getData()
-    this.notes = this.noteService.getSnapshot();
+   
   }
 
-  createNote() {
-    this.noteService.create(this.content);
-    this.content = '';
-  }
+  
 
 }
