@@ -1,5 +1,10 @@
 <div>
-  <h3>{{ note.content }}</h3>
+  <h3> TITLE: {{note.title}}</h3>
+  <p> DESCRIPTION: {{note.content}}</p>
+  <p> ID: {{note.hearts}} </p>>
+  <p>HEARTS: {{note.hearts}}</p>>
+  <p>TIME ADDED: {{note.time | date: 'full'}}</p>
+  
   <span class="button is-small is-info" (click)='addHeartToNote(note.hearts)'>
     Heart <i class="fa fa-heart"></i>
   </span>
