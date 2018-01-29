@@ -12,9 +12,9 @@ import { Product } from '../product-model';
 export class ProductDetailComponent {
 
   @Input()
-  note: Product;
+  product: Product;
 
-  constructor(private noteService: ProductService) { }
+  constructor(private productService: ProductService) { }
 
   //addHeartToNote(val: number) {
   //  if (this.product.id) {
